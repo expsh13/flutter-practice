@@ -14,6 +14,7 @@ class secondPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Image.asset('images/profile-card.png'),
             Text(
               name,
               style: TextStyle(fontSize: 50),

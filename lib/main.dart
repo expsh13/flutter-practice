@@ -76,6 +76,26 @@ class _MyHomePageState extends State<MyHomePage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("name"),
+      ),
+      body: Container(
+        color: Colors.yellow,
+        width: double.infinity,
+        height: double.infinity,
+        child: Row(
+          children: [
+            Text("a"),
+            Container(
+              width: 50,
+              height: 100,
+            ),
+            Text("a"),
+            Text("a")
+          ],
+        ),
+      ),
+    );
   }
 }

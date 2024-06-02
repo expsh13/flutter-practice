@@ -3,6 +3,7 @@ import 'package:flutter_practice/secondPage.dart';
 
 class FirstPage extends StatelessWidget {
   String nameText = "";
+  final List<String> entries = <String>['A', 'B', 'C'];
 
   @override
   Widget build(BuildContext context) {
@@ -10,34 +11,12 @@ class FirstPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("first"),
       ),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image.network(
-                  'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg'),
-              TextField(
-                onChanged: (String text) {
-                  nameText = text;
-                },
-                decoration: InputDecoration(
-                    border: OutlineInputBorder(), labelText: "name"),
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => secondPage(nameText),
-                      ));
-                },
-                child: const Text('secondへ'),
-              ),
-            ],
-          ),
-        ),
+      body: ListView.builder(
+        padding: const EdgeInsets.all(8),
+        itemCount: entries.length,
+        itemBuilder: (BuildContext context, int index) {
+          return Center(child: Text('Entry ${entries[index]}'));
+        },
       ),
     );
   }
